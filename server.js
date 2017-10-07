@@ -62,12 +62,22 @@ res.render('about.hbs',{
 });
 });
 
+//challenge
+app.get('/project',(req,res)=>{
+     res.render('project.hbs',{
+     pageTitle:'project',
+     currentYear: new Date().getFullYear(),
+     welcomeMwssage:'this the test rendered new page'
+     });
+ });
 
 app.get('/bad',(req,res)=>{
      res.send({
         errorMessage: 'error handling this request'
         });
  });
+
+ 
 
 app.listen(port,()=>{
     console.log('server is up on port:' + port);
